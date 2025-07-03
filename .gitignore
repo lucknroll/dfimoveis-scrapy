@@ -1,3 +1,5 @@
 venv/
 .env
 *.geojson
+personal_files/
+tratamento.py

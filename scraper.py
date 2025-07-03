@@ -32,7 +32,7 @@ class DfimoveisHousesSpider(scrapy.Spider):
         if len(ads) > 0:
             # Iterar sobre os anúncios para obter as informações
             for ad in ads:
-                url = response.urljoin(response.xpath('//a[@class="new-card"]/@href').get())    # Está com erro
+                url = response.urljoin(ad.xpath('.//@href').get())
                 preco = int(ad.xpath('.//div[@class="new-price"]/h4/span/text()').get().replace(".", ""))
                 endereco = ad.xpath('.//h2/text()').get().strip()
                 bairro = endereco.split(", ")[1]
